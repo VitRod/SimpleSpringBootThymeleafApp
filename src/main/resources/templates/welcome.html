@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Spring Boot Thymeleaf Application</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>     
+
+<nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
+    <a class="navbar-brand" href="#">MySite.com</a>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>Simple Spring Boot Web and Thymeleaf Application!!!!</h1>
+        <h2>
+            <span th:text="'Hello, ' + ${message}"></span>
+        </h2>
+    </div>
+    
+    <ul class="ul_center">
+     <ol>
+        <li th:each="task : ${tasks}" th:text="${task}"></li>     
+    </ol>
+    
+    <ol>
+        <li th:each="cities : ${cities}" th:text="${cities}"></li>
+    </ol>
+    
+    <ol>  
+        <li th:each="cars : ${cars}" th:text="${cars}"></li>  
+    </ol> 
+      
+  </ul>  
+    
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name 1</th>
+      <th scope="col">Name 2</th>
+      <th scope="col">Name 3</th>
+      <th scope="col">Name 4</th>
+      <th scope="col">Name 5</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  <tr>
+    <!-- On rows -->
+<td class="table-active"> 1 </td>
+
+
+    <!-- On cells (`td` or `th`) -->
+
+  <td class="bg-primary">Sally</td>
+  <td class="bg-success">Padme</td>
+  <td class="bg-warning">Roberta</td>
+  <td class="bg-danger">Jane</td>
+  <td class="bg-info">Alexa</td>
+</tr>
+
+<tr>
+  <td class="table-active">2</td>
+
+<!-- On rows -->
+<td class="bg-primary">Jessica</td>
+<td class="bg-success">Maria</td>
+<td class="bg-warning">Marta</td>
+<td class="bg-danger">Franchesca</td>
+<td class="bg-info">Jade</td>
+</tr>
+
+  </tbody>
+</table>
+    
+   
+    <ul class="list-group">
+  <li class="list-group-item">Countries</li>
+
+  
+  <li class="list-group-item list-group-item-primary">Poland</li>
+  <li class="list-group-item list-group-item-secondary">Ukraine</li>
+  <li class="list-group-item list-group-item-success">USA</li>
+  <li class="list-group-item list-group-item-danger">Great Britain</li>
+  <li class="list-group-item list-group-item-warning">France</li>
+  <li class="list-group-item list-group-item-info">Germany</li>
+  <li class="list-group-item list-group-item-light">Greece</li>
+  <li class="list-group-item list-group-item-dark">Romania</li>
+</ul>
+    
+
+</main>
+<!-- /.container -->
+
+
+<div th:replace="/fragments/footer :: footer"/>
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>
